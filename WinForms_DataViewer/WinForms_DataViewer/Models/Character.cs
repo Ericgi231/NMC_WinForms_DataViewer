@@ -8,9 +8,11 @@ namespace WinForms_DataViewer.Models
 {
     public class Character
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Race { get; set; }
-        public string Weapon { get; set; }
+        public int _id { get; set; }
+        public string name { get; set; }
+        public string weapon { get; set; }
+        public string gender { get; set; }
+        public string img_path { get; set; }
+        public string description { get; set; }
     }
 }

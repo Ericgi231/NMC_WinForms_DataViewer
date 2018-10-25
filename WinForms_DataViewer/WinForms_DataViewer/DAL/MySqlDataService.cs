@@ -9,12 +9,13 @@ using WinForms_DataViewer.Models;
 
 namespace WinForms_DataViewer.DAL
 {
-    class MySqlDataService : IDataService
+    public class MySqlDataService : IDataService
     {
-        public string ConnectionString { get; set; }
+        static string _connectionString;
+
         public MySqlDataService()
         {
-            ConnectionString = DataSettings.ConnectionString;
+            _connectionString = DataSettings.ConnectionString;
         }
 
         public List<Character> ReadAll()
