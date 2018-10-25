@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.charactersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataviewerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.charactersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgv_CharacterTable = new System.Windows.Forms.DataGridView();
             this.butt_View = new System.Windows.Forms.Button();
             this.butt_Delete = new System.Windows.Forms.Button();
             this.butt_Exit = new System.Windows.Forms.Button();
             this.butt_Help = new System.Windows.Forms.Button();
             this.butt_Save = new System.Windows.Forms.Button();
+            this.charactersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataviewerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.charactersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CharacterTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CharacterTable)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_CharacterTable
@@ -49,7 +49,7 @@
             this.dgv_CharacterTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_CharacterTable.Location = new System.Drawing.Point(12, 12);
             this.dgv_CharacterTable.Name = "dgv_CharacterTable";
-            this.dgv_CharacterTable.Size = new System.Drawing.Size(810, 402);
+            this.dgv_CharacterTable.Size = new System.Drawing.Size(666, 402);
             this.dgv_CharacterTable.TabIndex = 0;
             // 
             // butt_View
@@ -116,10 +116,10 @@
             this.Name = "ListForm";
             this.Text = "List";
             this.Load += new System.EventHandler(this.ListForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CharacterTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewerDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CharacterTable)).EndInit();
             this.ResumeLayout(false);
 
         }

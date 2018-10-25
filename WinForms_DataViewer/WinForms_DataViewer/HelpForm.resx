@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tb_Help.Text" xml:space="preserve">
+    <value>This application connects to a MongoDB database hosted on Atlas
+The data displayed is pulled from the database
+You may remove, add, or edit entries from this app and update them on the database by pressing save
+The data will save automatically when you exit
+Use view to take a closer look at a record
+The view and delete buttons only work when you select an entire row</value>
+  </data>
 </root>

@@ -88,7 +88,14 @@ namespace WinForms_DataViewer
         {
             foreach (DataGridViewRow row in dgv_CharacterTable.SelectedRows)
             {
-                dgv_CharacterTable.Rows.RemoveAt(row.Index);
+                try
+                {
+                    dgv_CharacterTable.Rows.RemoveAt(row.Index);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"{ex}", "Error");
+                }
             }
         }
 

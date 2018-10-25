@@ -21,10 +21,19 @@ namespace WinForms_DataViewer
         public DetailForm(Character character)
         {
             InitializeComponent();
+            //set form label
             this.Text = character.name;
+
+            //set image
             string path = $"Resources/{character.img_path}";
+            pb_Portrait.ErrorImage = Properties.Resources.ErrorImage;
             pb_Portrait.ImageLocation = path;
-            tb_Description.AppendText(character.description);
+
+            //set text
+            tb_Description.AppendText("Name: " + character.name);
+            tb_Description.AppendText("\r\nWeapon: " + character.weapon);
+            tb_Description.AppendText("\r\nGender: " + character.gender);
+            tb_Description.AppendText("\r\nDescription: " + character.description);
         }
 
         private void butt_back_Click(object sender, EventArgs e)
