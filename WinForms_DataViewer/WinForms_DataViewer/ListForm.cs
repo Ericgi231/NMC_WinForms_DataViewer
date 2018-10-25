@@ -30,7 +30,6 @@ namespace WinForms_DataViewer
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show($"{ex}","Error");
             }
         }
@@ -59,10 +58,9 @@ namespace WinForms_DataViewer
                 IDataService ds = new MongoDataService();
                 ds.WriteAll(characters);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"{ex}", "Error");
             }
             this.Close();
             Application.Exit();
@@ -91,6 +89,19 @@ namespace WinForms_DataViewer
             foreach (DataGridViewRow row in dgv_CharacterTable.SelectedRows)
             {
                 dgv_CharacterTable.Rows.RemoveAt(row.Index);
+            }
+        }
+
+        private void butt_Save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IDataService ds = new MongoDataService();
+                ds.WriteAll(characters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}", "Error");
             }
         }
     }

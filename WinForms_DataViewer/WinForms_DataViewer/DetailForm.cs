@@ -21,6 +21,7 @@ namespace WinForms_DataViewer
         public DetailForm(Character character)
         {
             InitializeComponent();
+            this.Text = character.name;
             string path = $"Resources/{character.img_path}";
             pb_Portrait.ImageLocation = path;
             tb_Description.AppendText(character.description);
