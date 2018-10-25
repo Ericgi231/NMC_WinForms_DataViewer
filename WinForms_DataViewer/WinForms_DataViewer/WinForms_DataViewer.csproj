@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\IDataService.cs" />
+    <Compile Include="DAL\MongoDataService.cs" />
     <Compile Include="DAL\MySqlDataService.cs" />
     <Compile Include="Data\DataSettings.cs" />
     <Compile Include="DetailForm.cs">
