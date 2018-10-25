@@ -15,6 +15,8 @@ namespace WinForms_DataViewer
 {
     public partial class ListForm : Form
     {
+        private List<Character> characters;
+
         public ListForm()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace WinForms_DataViewer
             // read data file
             //
             IDataService dataService = new MongoDataService();
-            List<Character> characters = dataService.ReadAll();
+            characters = dataService.ReadAll();
 
             //
             // bind list to DataGridView control
@@ -48,17 +50,48 @@ namespace WinForms_DataViewer
             var source = new BindingSource(bindingList, null);
             dgv_CharacterTable.DataSource = source;
 
-            //
-            // configure DataGridView control
-            //
-            this.dgv_CharacterTable.Columns["_id"].Visible = false;
-            this.dgv_CharacterTable.Columns["img_path"].Visible = false;
-            this.dgv_CharacterTable.Columns["description"].Visible = false;
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void butt_Exit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                IDataService ds = new MongoDataService();
+                ds.WriteAll(characters);
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            this.Close();
+            Application.Exit();
+        }
+
+        private void butt_Help_Click(object sender, EventArgs e)
+        {
+            HelpForm hf = new HelpForm();
+            hf.Show();
+        }
+
+        private void butt_View_Click(object sender, EventArgs e)
+        {
+            if (dgv_CharacterTable.SelectedRows.Count == 1)
+            {
+                Character character = new Character();
+                character = (Character)dgv_CharacterTable.CurrentRow.DataBoundItem;
+
+                DetailForm detailForm = new DetailForm(character);
+                detailForm.Show();
+            }
+        }
+
+        private void butt_Delete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgv_CharacterTable.SelectedRows)
+            {
+                dgv_CharacterTable.Rows.RemoveAt(row.Index);
+            }
         }
     }
 }

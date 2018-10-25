@@ -48,9 +48,8 @@
             this.dgv_CharacterTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_CharacterTable.Location = new System.Drawing.Point(12, 12);
             this.dgv_CharacterTable.Name = "dgv_CharacterTable";
-            this.dgv_CharacterTable.Size = new System.Drawing.Size(404, 215);
+            this.dgv_CharacterTable.Size = new System.Drawing.Size(594, 215);
             this.dgv_CharacterTable.TabIndex = 0;
-            this.dgv_CharacterTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // butt_View
             // 
@@ -60,6 +59,7 @@
             this.butt_View.TabIndex = 1;
             this.butt_View.Text = "View";
             this.butt_View.UseVisualStyleBackColor = true;
+            this.butt_View.Click += new System.EventHandler(this.butt_View_Click);
             // 
             // butt_Delete
             // 
@@ -69,30 +69,33 @@
             this.butt_Delete.TabIndex = 2;
             this.butt_Delete.Text = "Delete";
             this.butt_Delete.UseVisualStyleBackColor = true;
+            this.butt_Delete.Click += new System.EventHandler(this.butt_Delete_Click);
             // 
             // butt_Exit
             // 
-            this.butt_Exit.Location = new System.Drawing.Point(325, 233);
+            this.butt_Exit.Location = new System.Drawing.Point(515, 233);
             this.butt_Exit.Name = "butt_Exit";
             this.butt_Exit.Size = new System.Drawing.Size(91, 33);
             this.butt_Exit.TabIndex = 3;
             this.butt_Exit.Text = "Exit";
             this.butt_Exit.UseVisualStyleBackColor = true;
+            this.butt_Exit.Click += new System.EventHandler(this.butt_Exit_Click);
             // 
             // butt_Help
             // 
-            this.butt_Help.Location = new System.Drawing.Point(228, 233);
+            this.butt_Help.Location = new System.Drawing.Point(418, 233);
             this.butt_Help.Name = "butt_Help";
             this.butt_Help.Size = new System.Drawing.Size(91, 33);
             this.butt_Help.TabIndex = 4;
             this.butt_Help.Text = "Help";
             this.butt_Help.UseVisualStyleBackColor = true;
+            this.butt_Help.Click += new System.EventHandler(this.butt_Help_Click);
             // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 275);
+            this.ClientSize = new System.Drawing.Size(618, 275);
             this.Controls.Add(this.butt_Help);
             this.Controls.Add(this.butt_Exit);
             this.Controls.Add(this.butt_Delete);
