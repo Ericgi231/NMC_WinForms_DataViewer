@@ -64,8 +64,7 @@ namespace WinForms_DataViewer
                     dgv_CharacterTable.DataSource = source;
                     break;
             }
-
-            //dgv_CharacterTable.DataSource = sorted.Select(x => x.DataBoundItem).Cast<Character>().ToList();
+            
         }
 
         private void SetComboBox()
