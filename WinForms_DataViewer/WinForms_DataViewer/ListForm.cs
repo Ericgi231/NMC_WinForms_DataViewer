@@ -227,6 +227,7 @@ namespace WinForms_DataViewer
         {
             string selected = pan_Filter.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             dgv_CharacterTable.ClearSelection();
+            dgv_CharacterTable.CurrentCell = dgv_CharacterTable.Rows[dgv_CharacterTable.Rows.Count - 1].Cells[0];
             bool empty = true;
             foreach (DataGridViewRow row in dgv_CharacterTable.Rows)
             {
@@ -249,6 +250,7 @@ namespace WinForms_DataViewer
                 else
                 {
                     row.Visible = true;
+                    empty = false;
                 }
             }
             if (empty)
