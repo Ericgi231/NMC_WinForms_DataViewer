@@ -227,6 +227,7 @@ namespace WinForms_DataViewer
         {
             string selected = pan_Filter.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             dgv_CharacterTable.ClearSelection();
+            bool empty = true;
             foreach (DataGridViewRow row in dgv_CharacterTable.Rows)
             {
                 if (selected != "All")
@@ -236,6 +237,7 @@ namespace WinForms_DataViewer
                         if (row.Cells["Gender"].Value.ToString().ToLower() == selected.ToLower())
                         {
                             row.Visible = true;
+                            empty = false;
                         }
                         else
                         {
@@ -248,6 +250,10 @@ namespace WinForms_DataViewer
                 {
                     row.Visible = true;
                 }
+            }
+            if (empty)
+            {
+                MessageBox.Show($"No values found with gender {selected}","Error");
             }
         }
     }
